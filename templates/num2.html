@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Works on Chrome and Safari -->
+<html>
+    <head lang="en">
+        <title>File Upload Test</title>
+        <style type="text/css">
+            form {
+                position: relative;
+                border: dashed 4px #DDD;
+                padding: 0px;
+                width: 500px;
+                background-color: #EEE;
+                min-height: 100px;
+            }
+            #fileInput {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 0;
+            }
+            #fileTable {
+                width: 500px;
+                border: solid 1px #888;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: solid 1px #888;
+            }
+            #emptyMessage {
+                text-align: center;
+                font-size: 40px;
+                position: absolute;
+                padding-top: 20px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+            #uploadButton {
+                margin: 10px 0 0 400px;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#fileInput').change(function(e) {
+                    var $tbody = $('#fileInfo tbody');
+                    $tbody.empty();
+                    $(e.srcElement.files).each(function(i, file) {
+                        $tbody.append('<tr><td>' + file.fileName + '</td><td>' + file.fileSize + '</td><td>' + file.lastModifiedDate + '</td></tr>')
+                    });
+                    $('#emptyMessage').hide();
+                    $('#fileInfo').show();
+                });
+                $('#uploadButton').click(function(e) {
+                    $('form').submit();
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data" id="uploadform">
+            <div id="fileInfo" style="display: none">
+                <table>
+                    <thead><tr><th>Name</th><th>Size</th><th>Last Modified</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="emptyMessage">Drop Files Here</div>
+            <input id="fileInput" type="file" name="dragupload[]" multiple="multiple" />
+            <div style="clear: both"></div>
+        </form>
+        <button id="uploadButton" type="button">Upload</button>
+    </body>
+</html>
