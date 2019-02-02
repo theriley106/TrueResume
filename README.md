@@ -1,2 +1,2 @@
 # TrueResume
-Reducing Gender/Racial discrimination in the hiring process
+Reducing Gender/Racial/Age discrimination in the hiring process
