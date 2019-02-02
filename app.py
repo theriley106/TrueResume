@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, jsonify
+from flask import Flask, request, redirect, jsonify, render_template
 import os
 from werkzeug.utils import secure_filename
 
@@ -9,8 +9,12 @@ app.config["UPLOAD_FOLDER"] = "resumes"
 
 @app.route("/")
 def index():
-    return redirect("/static/index.html")
+    return render_template("index.html")
 
+def pdf_to_png(filename):
+	if '.pdf' in filename:
+		os.system("convert -density 300 {} {}".format(filename, filename.replace(".pdf", ".png")))
+		os.system("rm {}".format(filename))
 
 @app.route("/sendfile", methods=["POST"])
 def send_file():
@@ -22,7 +26,7 @@ def send_file():
     # open and close to update the access time.
     with open(save_path, "r") as f:
         pass
-
+    pdf_to_png(save_path)
     return "successful_upload"
 
 
