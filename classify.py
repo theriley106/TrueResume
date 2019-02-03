@@ -12,6 +12,11 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 from google.protobuf.json_format import MessageToJson
+try:
+  from keys import *
+except:
+  ACCESS_KEY = raw_input("Access Key: ")
+  SECRET_KEY = raw_input("Secret Key: ")
 
 #Global variables needed for call in main
 censorList = []
@@ -27,7 +32,7 @@ def strip_newline(stringVal):
   return ' '.join(re.findall("\w+", stringVal))
 
 #Process image with Google OCR API and get list of all text and locations of words.
-def gcp(imageName):    
+def gcp(imageName):
   #Instantiates a client
   client = vision.ImageAnnotatorClient()
 
@@ -49,12 +54,13 @@ def gcp(imageName):
   toAWS = str(response)
   toAWS = toAWS.split("}")[-2].partition(': "')[2][:-2].strip()
 
-  ############################################################## 
+  ##############################################################
   #Function that calls aws api and returns comprehension on text
-  comprehend = boto3.client(service_name='comprehend', region_name='us-east-1')
+  comprehend = boto3.client(service_name='comprehend', aws_access_key_id=ACCESS_KEY,
+  aws_secret_access_key=SECRET_KEY, region_name='us-east-1')
   toAWS.replace("\n", ' ')
   print('Calling DetectEntities')
-  with open('awsResponse.json', 'w') as outfile:  
+  with open('awsResponse.json', 'w') as outfile:
     json.dump(comprehend.detect_entities(Text=toAWS, LanguageCode='en'), outfile, sort_keys=True, indent=4)
   print('End of DetectEntities\n')
 
@@ -83,7 +89,7 @@ def gcp(imageName):
   f.close()
 
   #print(soroList)
-  
+
   response = MessageToJson(response)
   response = json.loads(str(response))
 
@@ -101,7 +107,7 @@ def gcp(imageName):
       if strip_newline(values['description'].lower()) not in BLACKLIST:
         print(strip_newline(values['description'].lower()))
         keywords.append(values['description'])
-      
+
   for i in range(len(keywords)):
     for values in gcpResponse['textAnnotations']:
       if values['description'].lower() == keywords[i].lower():
@@ -132,12 +138,12 @@ def classify(censorList, filename, saveas):
 
   for i in range(len(censorList)):
     draw = ImageDraw.Draw(im)
-    draw.rectangle(((censorList[i]['x1'], censorList[i]['y1']), 
+    draw.rectangle(((censorList[i]['x1'], censorList[i]['y1']),
     (censorList[i]['x2'], censorList[i]['y2'])), fill='#000000')
     del draw
 
-  #im.save(saveas)
-  im.show()
+  im.save(saveas)
+  #im.show()
 
 def do_gender(fileName, saveAs):
   gcp(fileName)
