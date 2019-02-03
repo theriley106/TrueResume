@@ -114,7 +114,6 @@
       <ul class="nav nav-pills nav-stacked">
         <li><h1>Gender: <input class="toggleButtons" type="checkbox" id="genderToggle" data-toggle="toggle"></h1> </li>
         <li><h1>Race: <input class="toggleButtons" type="checkbox" id="raceToggle" data-toggle="toggle"></h1></li>
-        <li><h1>Age: <input class="toggleButtons" type="checkbox" id="ageToggle" data-toggle="toggle"></h1></li>
       </ul><br>
       </div>
     </div>
@@ -134,9 +133,6 @@
 <script>
 
 function hide_all(){
-
-
-
     var y = document.getElementsByClassName('myResumes');
     for(var i = 0; i < y.length; i++)
     {
@@ -152,7 +148,7 @@ document.getElementById('genderToggle').onchange = function(e){
     show_gender();
       //Toggle is on
   } else {
-    hide_gender();
+    show_og();
       //Toggle is off
   }
 };
@@ -163,7 +159,7 @@ document.getElementById('raceToggle').onchange = function(e){
     show_race();
       //Toggle is on
   } else {
-    hide_race();
+    show_og();
       //Toggle is off
   }
 };
@@ -174,11 +170,17 @@ document.getElementById('ageToggle').onchange = function(e){
     show_age();
       //Toggle is on
   } else {
-    hide_age();
+    show_og();
       //Toggle is off
   }
 };
+show_og();
+hide_all();
+show_og();
 
+</script>
+<script>
+show_og();
 </script>
 </footer>
 
