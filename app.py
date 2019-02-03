@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, jsonify, render_template
+from flask import Flask, request, redirect, jsonify, render_template, url_for
 import os
 from werkzeug.utils import secure_filename
 
@@ -14,9 +14,9 @@ def extract_file_name(pdfFile):
 def index():
     return render_template("index.html")
 
-@app.route("/test")
-def index2():
-    return render_template("index2.html", fileName="ChrisResume")
+@app.route("/resume/<fileName>")
+def index2(fileName):
+    return render_template("index2.html", fileName=fileName)
 
 def pdf_to_png(filename):
 	if '.pdf' in filename:
@@ -34,7 +34,9 @@ def send_file():
     with open(save_path, "r") as f:
         pass
     pdf_to_png(save_path)
-    return "successful_upload"
+    return "/resume/{}".format(extract_file_name(save_path))
+    #return redirect(url_for('index2',fileName=extract_file_name(save_path)))
+    #return "successful_upload"
 
 
 @app.route("/filenames", methods=["GET"])

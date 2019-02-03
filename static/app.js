@@ -1,15 +1,12 @@
 $(function(){
 
     var refreshFilenameList = function(data){
-        var templateText = $("#tableTemplate").html();
-        var template = Handlebars.compile(templateText);
-        var renderedText = template(data);
-        var renderedDom = $(renderedText);
-        $("#tablearea").empty();
-        $("#tablearea").append(renderedDom);
+        return;
     };
 
     var fileUploadSuccess = function(data){
+        console.log(data);
+        window.location.href = data;
         var url = "/filenames";
         var promise = $.get(url);
         promise.then(refreshFilenameList);
@@ -47,5 +44,5 @@ $(function(){
 
     $(".droparea").on(dropHandlerSet);
 
-    fileUploadSuccess(false); // called to ensure that we have initial data
+    //fileUploadSuccess(false); // called to ensure that we have initial data
 });
