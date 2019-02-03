@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>drag-drop example</title>
+    <style>
+      body {
+        height: 100%;
+      }
+      .drag {
+        border: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Drag something onto this page</h1>
+    <script src="dragdrop.min.js"></script>
+    <script>
+      window.remove = DragDrop('body', {
+        onDrop: function (files, pos, fileList, directories) {
+          window.files = files
+          console.log('onDrop: ' + files.length + ' files at ' + pos.x + ', ' + pos.y)
+          files.forEach(function (file) {
+            console.log('- ' + file.name + ' (' + file.size + ') (' + file.type + ')')
+          })
+          console.log('files array', files)
+          console.log('FileList object', fileList)
+          console.log('directories array', directories)
+        },
+        onDropText: function (text, pos) {
+          window.text = text
+          console.log('onDropText: ' + text + ' at ' + pos.x + ', ' + pos.y)
+        }
+      })
+    </script>
+  </body>
+</html>

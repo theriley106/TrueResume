@@ -11,9 +11,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static',filename='app.css') }}">
+    <style>
+    body {
+    height: 100vh;
+}
+    body {
+    min-height: 100vh;
+}
+    .drag {
+        border: 5px solid red;
+      }
+      </style>
 </head>
 <body>
-
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="{{ url_for('static',filename='app.js') }}"></script>
+<script src="{{ url_for('static',filename='dragdrop.min.js') }}"></script>
 <div class="container mx-auto text-center p-5">
     <h1 class="py-2"><b>True Resume</b></h1>
 </div>
@@ -22,8 +35,23 @@
         <div class="droparea mx-auto">Drop Here</div>
     </div>
 </div>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script src="{{ url_for('static',filename='app.js') }}">
-</script>
+<script>
+      window.remove = DragDrop('body', {
+        onDrop: function (files, pos, fileList, directories) {
+          window.files = files
+          console.log('onDrop: ' + files.length + ' files at ' + pos.x + ', ' + pos.y)
+          files.forEach(function (file) {
+            console.log('- ' + file.name + ' (' + file.size + ') (' + file.type + ')')
+          })
+          console.log('files array', files)
+          console.log('FileList object', fileList)
+          console.log('directories array', directories)
+        },
+        onDropText: function (text, pos) {
+          window.text = text
+          console.log('onDropText: ' + text + ' at ' + pos.x + ', ' + pos.y)
+        }
+      })
+    </script>
 </body>
 </html>
