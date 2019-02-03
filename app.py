@@ -6,10 +6,17 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "resumes"
 
+def extract_file_name(pdfFile):
+    # Extracts the file name
+    return pdfFile.partition(".")[0][::-1].partition('/')[0][::-1]
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/test")
+def index2():
+    return render_template("index2.html", fileName="ChrisResume")
 
 def pdf_to_png(filename):
 	if '.pdf' in filename:
@@ -48,4 +55,5 @@ def get_filenames():
 
 
 if __name__ == '__main__':
+    #raw_input(extract_file_name("/home/christopher/Github/TrueResume/resume.png"))
     app.run(debug=False)

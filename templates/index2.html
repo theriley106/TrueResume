@@ -14,17 +14,26 @@
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
 
+      .container {
+          position: relative;
+      }
+
+      .image {
+
+          position: absolute;
+      }
+
     .fill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden
-}
-.fill img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden
+    }
+    .fill img {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
 
     /* Set gray background color and 100% height */
     .sidenav {
@@ -48,6 +57,53 @@
       .row.content {height: auto;}
     }
   </style>
+  <script>
+
+
+  function show_og(){
+    var img = document.getElementById('original');
+    img.style.visibility = 'visible';
+  }
+
+  function show_gender(){
+    var img = document.getElementById('gender');
+    img.style.visibility = 'visible';
+  }
+
+  function show_race(){
+    var img = document.getElementById('race');
+    img.style.visibility = 'visible';
+  }
+
+  function show_age(){
+    var img = document.getElementById('age');
+    img.style.visibility = 'visible';
+  }
+
+  function hide_og(){
+    var img = document.getElementById('original');
+    img.style.visibility = 'hidden';
+  }
+
+
+
+  function hide_age(){
+    var img = document.getElementById('age');
+    img.style.visibility = 'hidden';
+  }
+
+
+  function hide_gender(){
+      var img = document.getElementById('gender');
+      img.style.visibility = 'hidden';
+    }
+
+  function hide_race(){
+    var img = document.getElementById('race');
+    img.style.visibility = 'hidden';
+  }
+
+  </script>
 </head>
 <body>
 
@@ -56,21 +112,76 @@
     <div class="col-sm-3 sidenav">
     <div class="col-sm-3 affix sidenav">
       <ul class="nav nav-pills nav-stacked">
-        <li><h1>Gender: <input type="checkbox" checked data-toggle="toggle"></h1> </li>
-        <li><h1>Race: <input type="checkbox" checked data-toggle="toggle"></h1></li>
-        <li><h1>Age: <input type="checkbox" checked data-toggle="toggle"></h1></li>
+        <li><h1>Gender: <input class="toggleButtons" type="checkbox" id="genderToggle" data-toggle="toggle"></h1> </li>
+        <li><h1>Race: <input class="toggleButtons" type="checkbox" id="raceToggle" data-toggle="toggle"></h1></li>
+        <li><h1>Age: <input class="toggleButtons" type="checkbox" id="ageToggle" data-toggle="toggle"></h1></li>
+        <input id="clickMe" type="button" value="clickme" onclick="hide_all();" />
       </ul><br>
       </div>
     </div>
 
     <div class="col-sm-9">
-    <img src="/static/ChrisResume.png" style="display: block;
-  width: 100%;
-  height: auto;" alt="" />
+    <div class="overlay">
+    <div class="image"><img id="original" src="{{ url_for('static',filename=fileName + '.png') }}" class="myResumes" style="display: block; width: 100%; height: auto; visibility: visible;" alt="" /></div>
+    <div class="image"><img id="age" src="{{ url_for('static',filename=fileName + '_age.png') }}" class="myResumes" style="display: block; width: 100%; height: auto; visibility: visible;" alt="" /></div>
+    <div class="image"><img id="race" src="{{ url_for('static',filename=fileName + '_race.png') }}" class="myResumes" style="display: block; width: 100%; height: auto; visibility: visible;" alt="" /></div>
+    <div class="image"><img id="gender" src="{{ url_for('static',filename=fileName + '_gender.png') }}" class="myResumes" style="display: block; width: 100%; height: auto; visibility: visible;" alt="" /></div>
 
+    </div>
     </div>
   </div>
 </div>
+<footer>
+<script>
+
+function hide_all(){
+
+
+
+    var y = document.getElementsByClassName('myResumes');
+    for(var i = 0; i < y.length; i++)
+    {
+      y[i].style.visibility = 'hidden';
+    }
+  }
+
+hide_all();
+
+document.getElementById('genderToggle').onchange = function(e){
+  hide_all();
+  if(e.target.checked) {
+    show_gender();
+      //Toggle is on
+  } else {
+    hide_gender();
+      //Toggle is off
+  }
+};
+
+document.getElementById('raceToggle').onchange = function(e){
+  hide_all();
+  if(e.target.checked) {
+    show_race();
+      //Toggle is on
+  } else {
+    hide_race();
+      //Toggle is off
+  }
+};
+
+document.getElementById('ageToggle').onchange = function(e){
+  hide_all();
+  if(e.target.checked) {
+    show_age();
+      //Toggle is on
+  } else {
+    hide_age();
+      //Toggle is off
+  }
+};
+
+</script>
+</footer>
 
 </body>
 </html>
