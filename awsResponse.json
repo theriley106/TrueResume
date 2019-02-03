@@ -1,0 +1,744 @@
+{
+    "Entities": [
+        {
+            "BeginOffset": 0,
+            "EndOffset": 19,
+            "Score": 0.9666882157325745,
+            "Text": "Christopher Lambert",
+            "Type": "PERSON"
+        },
+        {
+            "BeginOffset": 21,
+            "EndOffset": 33,
+            "Score": 0.9999114871025085,
+            "Text": "864-567-4106",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 36,
+            "EndOffset": 57,
+            "Score": 0.8547107577323914,
+            "Text": "CrLambe@clemson.edu\\n",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 57,
+            "EndOffset": 87,
+            "Score": 0.9586132764816284,
+            "Text": "https://github.com/theriley106",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 121,
+            "EndOffset": 143,
+            "Score": 0.7919190526008606,
+            "Text": "Calhoun Honors College",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 221,
+            "EndOffset": 225,
+            "Score": 0.779542088508606,
+            "Text": "2021",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 228,
+            "EndOffset": 239,
+            "Score": 0.825413167476654,
+            "Text": "342\\200\\242",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 245,
+            "EndOffset": 258,
+            "Score": 0.876641571521759,
+            "Text": "3.66\\nClemson",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 271,
+            "EndOffset": 275,
+            "Score": 0.9898526072502136,
+            "Text": "2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 385,
+            "EndOffset": 389,
+            "Score": 0.8146528005599976,
+            "Text": "2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 396,
+            "EndOffset": 404,
+            "Score": 0.9487594366073608,
+            "Text": "Alto, CA",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 405,
+            "EndOffset": 417,
+            "Score": 0.8387002944946289,
+            "Text": "nAugust 2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 420,
+            "EndOffset": 433,
+            "Score": 0.9981715679168701,
+            "Text": "December 2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 506,
+            "EndOffset": 510,
+            "Score": 0.6669530272483826,
+            "Text": "2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 520,
+            "EndOffset": 522,
+            "Score": 0.4263763725757599,
+            "Text": "VA",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 529,
+            "EndOffset": 533,
+            "Score": 0.7710360288619995,
+            "Text": "2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 535,
+            "EndOffset": 538,
+            "Score": 0.30576810240745544,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 539,
+            "EndOffset": 542,
+            "Score": 0.6921371817588806,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 543,
+            "EndOffset": 558,
+            "Score": 0.6046897768974304,
+            "Text": "223 August 2019",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 576,
+            "EndOffset": 588,
+            "Score": 0.9282276034355164,
+            "Text": "nAtlanta, GA",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 618,
+            "EndOffset": 631,
+            "Score": 0.9607222676277161,
+            "Text": "nJanuary 2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 634,
+            "EndOffset": 642,
+            "Score": 0.9931269288063049,
+            "Text": "May 2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 645,
+            "EndOffset": 656,
+            "Score": 0.8763423562049866,
+            "Text": "342\\200\\242",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 699,
+            "EndOffset": 702,
+            "Score": 0.7384211421012878,
+            "Text": "NCR",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 792,
+            "EndOffset": 795,
+            "Score": 0.6714695692062378,
+            "Text": "NCR",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 796,
+            "EndOffset": 808,
+            "Score": 0.7669911980628967,
+            "Text": "342\\200\\231s",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 870,
+            "EndOffset": 884,
+            "Score": 0.815484881401062,
+            "Text": "nSan Francisco",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 886,
+            "EndOffset": 888,
+            "Score": 0.9602581858634949,
+            "Text": "CA",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 889,
+            "EndOffset": 898,
+            "Score": 0.5756761431694031,
+            "Text": "nSoftware",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 924,
+            "EndOffset": 928,
+            "Score": 0.8657310009002686,
+            "Text": "2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 930,
+            "EndOffset": 933,
+            "Score": 0.42384859919548035,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 934,
+            "EndOffset": 937,
+            "Score": 0.8060826659202576,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 938,
+            "EndOffset": 953,
+            "Score": 0.5489418506622314,
+            "Text": "223 August 2018",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1431,
+            "EndOffset": 1437,
+            "Score": 0.9913755059242249,
+            "Text": "Amazon",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 1438,
+            "EndOffset": 1443,
+            "Score": 0.5961002707481384,
+            "Text": "Alexa",
+            "Type": "COMMERCIAL_ITEM"
+        },
+        {
+            "BeginOffset": 1533,
+            "EndOffset": 1537,
+            "Score": 0.7037618160247803,
+            "Text": "2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 1539,
+            "EndOffset": 1542,
+            "Score": 0.44121354818344116,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1543,
+            "EndOffset": 1546,
+            "Score": 0.7582192420959473,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1547,
+            "EndOffset": 1550,
+            "Score": 0.7263965010643005,
+            "Text": "223",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1572,
+            "EndOffset": 1580,
+            "Score": 0.789783239364624,
+            "Text": "Alto, CA",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 1620,
+            "EndOffset": 1624,
+            "Score": 0.9081966876983643,
+            "Text": "2017",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 1626,
+            "EndOffset": 1637,
+            "Score": 0.6573886871337891,
+            "Text": "342\\200\\223",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 1638,
+            "EndOffset": 1649,
+            "Score": 0.9797471165657043,
+            "Text": "August 2017",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 1734,
+            "EndOffset": 1739,
+            "Score": 0.9589921236038208,
+            "Text": "Tesla",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 1740,
+            "EndOffset": 1747,
+            "Score": 0.8528206944465637,
+            "Text": "Model X",
+            "Type": "COMMERCIAL_ITEM"
+        },
+        {
+            "BeginOffset": 1749,
+            "EndOffset": 1756,
+            "Score": 0.9374449253082275,
+            "Text": "Model S",
+            "Type": "COMMERCIAL_ITEM"
+        },
+        {
+            "BeginOffset": 1768,
+            "EndOffset": 1790,
+            "Score": 0.819264829158783,
+            "Text": "3\\nInfotainment System",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1793,
+            "EndOffset": 1796,
+            "Score": 0.40218961238861084,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1797,
+            "EndOffset": 1800,
+            "Score": 0.7329525947570801,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1801,
+            "EndOffset": 1804,
+            "Score": 0.792243480682373,
+            "Text": "242",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 2035,
+            "EndOffset": 2046,
+            "Score": 0.500210702419281,
+            "Text": "BigRedHacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2048,
+            "EndOffset": 2066,
+            "Score": 0.8804174661636353,
+            "Text": "Cornell University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2069,
+            "EndOffset": 2082,
+            "Score": 0.9184325933456421,
+            "Text": "HackPrinceton",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2084,
+            "EndOffset": 2104,
+            "Score": 0.9640838503837585,
+            "Text": "Princeton University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2107,
+            "EndOffset": 2117,
+            "Score": 0.6078307032585144,
+            "Text": "VandyHacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2118,
+            "EndOffset": 2122,
+            "Score": 0.9592028856277466,
+            "Text": "2017",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 2124,
+            "EndOffset": 2145,
+            "Score": 0.9852103590965271,
+            "Text": "Vanderbilt University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2148,
+            "EndOffset": 2155,
+            "Score": 0.8722127079963684,
+            "Text": "nHackNC",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2157,
+            "EndOffset": 2160,
+            "Score": 0.8503085970878601,
+            "Text": "UNC",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2163,
+            "EndOffset": 2174,
+            "Score": 0.8765018582344055,
+            "Text": "Chapel Hill",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 2177,
+            "EndOffset": 2183,
+            "Score": 0.9159578084945679,
+            "Text": "HackGT",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2185,
+            "EndOffset": 2197,
+            "Score": 0.9703386425971985,
+            "Text": "Georgia Tech",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2200,
+            "EndOffset": 2220,
+            "Score": 0.9351654648780823,
+            "Text": "Disrupt the District",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2222,
+            "EndOffset": 2236,
+            "Score": 0.9832108616828918,
+            "Text": "Washington, DC",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 2239,
+            "EndOffset": 2248,
+            "Score": 0.9399464130401611,
+            "Text": "ColaHacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2250,
+            "EndOffset": 2253,
+            "Score": 0.9888525009155273,
+            "Text": "USC",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2256,
+            "EndOffset": 2263,
+            "Score": 0.5449800491333008,
+            "Text": "HackGSU",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2266,
+            "EndOffset": 2290,
+            "Score": 0.9954940676689148,
+            "Text": "Georgia State University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2293,
+            "EndOffset": 2307,
+            "Score": 0.9415099620819092,
+            "Text": "Uncommon Hacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2309,
+            "EndOffset": 2330,
+            "Score": 0.9978703260421753,
+            "Text": "University of Chicago",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2333,
+            "EndOffset": 2342,
+            "Score": 0.9719164371490479,
+            "Text": "Med Hacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2344,
+            "EndOffset": 2372,
+            "Score": 0.9366030097007751,
+            "Text": "The Johns Hopkins University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2375,
+            "EndOffset": 2385,
+            "Score": 0.7943339943885803,
+            "Text": "VandyHacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2386,
+            "EndOffset": 2390,
+            "Score": 0.8582948446273804,
+            "Text": "2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 2393,
+            "EndOffset": 2414,
+            "Score": 0.9844943284988403,
+            "Text": "Vanderbilt University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2417,
+            "EndOffset": 2428,
+            "Score": 0.9077755808830261,
+            "Text": "AuburnHacks",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2430,
+            "EndOffset": 2447,
+            "Score": 0.9790052771568298,
+            "Text": "Auburn University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2450,
+            "EndOffset": 2464,
+            "Score": 0.6119264364242554,
+            "Text": "TOM:Vanderbilt",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2466,
+            "EndOffset": 2487,
+            "Score": 0.988876223564148,
+            "Text": "Vanderbilt University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2489,
+            "EndOffset": 2499,
+            "Score": 0.5681371688842773,
+            "Text": "nOrganizer",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2500,
+            "EndOffset": 2516,
+            "Score": 0.7752568125724792,
+            "Text": "Mentor: CUhackit",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2518,
+            "EndOffset": 2536,
+            "Score": 0.9834463596343994,
+            "Text": "Clemson University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2539,
+            "EndOffset": 2549,
+            "Score": 0.972074568271637,
+            "Text": "HelloWorld",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2551,
+            "EndOffset": 2569,
+            "Score": 0.9883177876472473,
+            "Text": "Clemson University",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2572,
+            "EndOffset": 2578,
+            "Score": 0.9080544710159302,
+            "Text": "HackGT",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2580,
+            "EndOffset": 2611,
+            "Score": 0.9806585907936096,
+            "Text": "Georgia Institute of Technology",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2753,
+            "EndOffset": 2787,
+            "Score": 0.8785334229469299,
+            "Text": "https://github.com/theriley106/The",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 2788,
+            "EndOffset": 2796,
+            "Score": 0.6204490065574646,
+            "Text": "WSBIndex",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2797,
+            "EndOffset": 2811,
+            "Score": 0.6262325644493103,
+            "Text": "nDecember 2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 2813,
+            "EndOffset": 2816,
+            "Score": 0.36256685853004456,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 2817,
+            "EndOffset": 2820,
+            "Score": 0.878261923789978,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 2821,
+            "EndOffset": 2837,
+            "Score": 0.7403421401977539,
+            "Text": "223 January 2019",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 2838,
+            "EndOffset": 2845,
+            "Score": 0.9561209082603455,
+            "Text": "nAmazon",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2904,
+            "EndOffset": 2910,
+            "Score": 0.9656893014907837,
+            "Text": "Amazon",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 2933,
+            "EndOffset": 2970,
+            "Score": 0.9709421396255493,
+            "Text": "https://github.com/theriley106/Senior",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 2995,
+            "EndOffset": 2999,
+            "Score": 0.8044377565383911,
+            "Text": "2016",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 3001,
+            "EndOffset": 3004,
+            "Score": 0.3377705216407776,
+            "Text": "342",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 3005,
+            "EndOffset": 3008,
+            "Score": 0.7572878003120422,
+            "Text": "200",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 3009,
+            "EndOffset": 3021,
+            "Score": 0.7204124331474304,
+            "Text": "223 May 2017",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 3044,
+            "EndOffset": 3053,
+            "Score": 0.731217086315155,
+            "Text": "reCAPTCHA",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 3054,
+            "EndOffset": 3057,
+            "Score": 0.8041059374809265,
+            "Text": "2.0",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 3085,
+            "EndOffset": 3126,
+            "Score": 0.8280709385871887,
+            "Text": "https://github.com/theriley106/outCaptcha",
+            "Type": "OTHER"
+        },
+        {
+            "BeginOffset": 3152,
+            "EndOffset": 3156,
+            "Score": 0.9963472485542297,
+            "Text": "2018",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 3159,
+            "EndOffset": 3168,
+            "Score": 0.9960646033287048,
+            "Text": "June 2018",
+            "Type": "DATE"
+        }
+    ],
+    "ResponseMetadata": {
+        "HTTPHeaders": {
+            "connection": "keep-alive",
+            "content-length": "10817",
+            "content-type": "application/x-amz-json-1.1",
+            "date": "Sun, 03 Feb 2019 01:55:08 GMT",
+            "x-amzn-requestid": "bc0b7916-2756-11e9-bea5-a1351da0325b"
+        },
+        "HTTPStatusCode": 200,
+        "RequestId": "bc0b7916-2756-11e9-bea5-a1351da0325b",
+        "RetryAttempts": 0
+    }
+}
