@@ -5,8 +5,8 @@
     max-height: 50vh !important;
 }
 .droparea {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 300px;
     border-style: dotted;
     border-width: 3px;
     border-color: #808080;
