@@ -18,8 +18,12 @@ censorList = []
 fratList = []
 soroList = []
 
+BLACKLIST = ["new", "in", "of", "dean", "deans", "dean's", "professional", "and", "north", "university", "college", "society"]
+
 #Strip newlines from gcp response
 def strip_newline(stringVal):
+  if '@' in stringVal:
+    return stringVal.partition("@")[0]
   return ' '.join(re.findall("\w+", stringVal))
 
 #Process image with Google OCR API and get list of all text and locations of words.
@@ -58,19 +62,27 @@ def gcp(imageName):
   f = open('data/frats.txt')
   frats = f.read()
 
-  frats.replace('', ' ')
+  #frats.replace('', ' ')
   for value in frats.split(','):
-    fratList.append(strip_newline(value.replace("'", "").strip().lower()))
+    for val in strip_newline(value.replace("'", "").strip().lower()).split():
+      #print(val)
+      if val.lower() not in BLACKLIST:
+        fratList.append(val)
   f.close()
 
   #Open data for comparison to sororities
   f = open('data/Sororities.txt')
   soros = f.read()
 
-  soros.replace('', ' ')
+  #soros.replace('', ' ')
   for value in soros.split(','):
-    soroList.append(strip_newline(value.replace("'", "").strip().lower()))
+    for val in strip_newline(value.replace("'", "").strip().lower()).split():
+      #print(val)
+      if val.lower() not in BLACKLIST:
+        soroList.append(val)
   f.close()
+
+  #print(soroList)
   
   response = MessageToJson(response)
   response = json.loads(str(response))
@@ -84,8 +96,11 @@ def gcp(imageName):
     gcpResponse = json.load(f)
 
   for values in gcpResponse['textAnnotations']:
-    if strip_newline(values['description'].lower()) in fratList or soroList:
-      keywords.append(values['description'])
+    #strip_newline(values['description'].lower()).split()
+    if strip_newline(values['description'].lower()) in fratList or strip_newline(values['description'].lower()) in soroList:
+      if strip_newline(values['description'].lower()) not in BLACKLIST:
+        print(strip_newline(values['description'].lower()))
+        keywords.append(values['description'])
       
   for i in range(len(keywords)):
     for values in gcpResponse['textAnnotations']:
@@ -121,12 +136,21 @@ def classify(censorList, filename, saveas):
     (censorList[i]['x2'], censorList[i]['y2'])), fill='#000000')
     del draw
 
-  im.save(saveas)
+  #im.save(saveas)
+  im.show()
 
-def do_all(fileName, saveAs):
+def do_gender(fileName, saveAs):
+  gcp(fileName)
+  classify(censorList, fileName, saveAs)
+
+def do_race(fileName, saveAs):
+  gcp(fileName)
+  classify(censorList, fileName, saveAs)
+
+def do_both(fileName, saveAs):
   gcp(fileName)
   classify(censorList, fileName, saveAs)
 
 
 if __name__ == "__main__":
-  do_all('soroTest.png', "PLEASEWORK.png")
+  do_gender('testResumes/sample_christy.jpeg', "PLEASEWORK.png")
