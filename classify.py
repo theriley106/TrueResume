@@ -54,12 +54,22 @@ def gcp(imageName):
     json.dump(comprehend.detect_entities(Text=toAWS, LanguageCode='en'), outfile, sort_keys=True, indent=4)
   print('End of DetectEntities\n')
 
+  #Open data for comparison to fraternities
   f = open('data/frats.txt')
   frats = f.read()
 
   frats.replace('', ' ')
   for value in frats.split(','):
     fratList.append(strip_newline(value.replace("'", "").strip().lower()))
+  f.close()
+
+  #Open data for comparison to sororities
+  f = open('data/Sororities.txt')
+  soros = f.read()
+
+  soros.replace('', ' ')
+  for value in soros.split(','):
+    soroList.append(strip_newline(value.replace("'", "").strip().lower()))
   f.close()
   
   response = MessageToJson(response)
@@ -74,7 +84,7 @@ def gcp(imageName):
     gcpResponse = json.load(f)
 
   for values in gcpResponse['textAnnotations']:
-    if strip_newline(values['description'].lower()) in fratList:
+    if strip_newline(values['description'].lower()) in fratList or soroList:
       keywords.append(values['description'])
       
   for i in range(len(keywords)):
@@ -119,4 +129,4 @@ def do_all(fileName, saveAs):
 
 
 if __name__ == "__main__":
-  do_all('fratTest.png', "PLEASEWORK.png")
+  do_all('soroTest.png', "PLEASEWORK.png")

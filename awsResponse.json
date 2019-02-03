@@ -2,22 +2,22 @@
     "Entities": [
         {
             "BeginOffset": 0,
-            "EndOffset": 6,
-            "Score": 0.5058285593986511,
-            "Text": "Acacia",
+            "EndOffset": 9,
+            "Score": 0.6415764689445496,
+            "Text": "Alpha Chi",
             "Type": "ORGANIZATION"
         }
     ],
     "ResponseMetadata": {
         "HTTPHeaders": {
             "connection": "keep-alive",
-            "content-length": "111",
+            "content-length": "114",
             "content-type": "application/x-amz-json-1.1",
-            "date": "Sun, 03 Feb 2019 14:58:33 GMT",
-            "x-amzn-requestid": "2d592159-27c4-11e9-8c0a-33aa4859586d"
+            "date": "Sun, 03 Feb 2019 15:25:26 GMT",
+            "x-amzn-requestid": "ee545551-27c7-11e9-a185-f764b093be7e"
         },
         "HTTPStatusCode": 200,
-        "RequestId": "2d592159-27c4-11e9-8c0a-33aa4859586d",
+        "RequestId": "ee545551-27c7-11e9-a185-f764b093be7e",
         "RetryAttempts": 0
     }
 }
