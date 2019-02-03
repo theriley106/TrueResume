@@ -11,7 +11,7 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 from google.protobuf.json_format import MessageToJson
-
+censorList = []
 #Process image with google ocr api and get list of all text and location
 def gcp(imageName):    
   # Instantiates a client
@@ -33,8 +33,8 @@ def gcp(imageName):
   toAWS = str(response)
   toAWS = toAWS.split("}")[-2].partition(': "')[2][:-2].strip()
 
-############################################################## 
-#Function that calls aws api and returns comprehension on text
+  ############################################################## 
+  #Function that calls aws api and returns comprehension on text
   comprehend = boto3.client(service_name='comprehend', region_name='us-east-1')
   toAWS.replace("\n", ' ')
   print('Calling DetectEntities')
@@ -55,7 +55,7 @@ def gcp(imageName):
   with open('gcpResponse.json') as f:
     gcpResponse = json.load(f)
 
-  censorList = []
+  
   keywords.append('Science')
 
   for i in range(len(keywords)):
@@ -69,8 +69,6 @@ def gcp(imageName):
         censorList.append(wordDict)
   # for i in range(len(censorList)):
   #   print(censorList[i])
-
-  classify(censorList, 'resumes/ChrisResume.png', "PLEASEWORK.png")
 
 #pull keywords from returned aws json, populate list
 def findKeywords():
@@ -98,6 +96,10 @@ def classify(censorList, filename, saveas):
 
   im.save(saveas)
 
+def do_all(fileName, saveAs):
+  gcp(fileName)
+  classify(censorList, fileName, saveAs)
+
+
 if __name__ == "__main__":
-  gcp('resumes/ChrisResume.png')
-  
+  do_all('resumes/HaydenRieweResume.jpeg', "PLEASEWORK2.png")
