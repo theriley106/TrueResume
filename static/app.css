@@ -1,13 +1,15 @@
 * {
   font-family: 'Titillium Web', sans-serif !important;
 }
+.jumbotron {
+    max-height: 50vh !important;
+}
 .droparea {
     width: 200px;
     height: 200px;
-    border-style: solid;
+    border-style: dotted;
     border-width: 3px;
-    border-color: red;
-    float: left;
+    border-color: #808080;
     line-height: 200px;
     text-align: center;
 }
