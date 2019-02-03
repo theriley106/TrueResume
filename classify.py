@@ -10,29 +10,10 @@ import io
 import os
 from google.cloud import vision
 from google.cloud.vision import types
+from google.protobuf.json_format import MessageToJson
 
-#Function to censor words based on coordinates in image
-def classify(censorList, filename, saveas):
-
-  im = Image.open(filename).convert('RGBA')
-
-  for i in range(len(censorList)):
-    draw = ImageDraw.Draw(im)
-    draw.rectangle(((censorList[i]['x1'], censorList[i]['y1']), 
-    (censorList[i]['x2'], censorList[i]['y2'])), fill='#000000')
-    del draw
-
-  im.save(saveas)
-
-#Function that calls aws api and returns comprehension on text
-def comprehend(text):
-  comprehend = boto3.client(service_name='comprehend', region_name='us-east-1')
-  text.replace("\n", ' ')
-  print('Calling DetectEntities')
-  print(json.dumps(comprehend.detect_entities(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
-  print('End of DetectEntities\n')
-
-def gcp(imageName):
+#Process image with google ocr api and get list of all text and location
+def gcp(imageName):    
   # Instantiates a client
   client = vision.ImageAnnotatorClient()
   #The name of the image file to annotate
@@ -51,6 +32,72 @@ def gcp(imageName):
 
   toAWS = str(response)
   toAWS = toAWS.split("}")[-2].partition(': "')[2][:-2].strip()
-  comprehend(toAWS)
 
-gcp('resumes/ChrisResume.png')
+############################################################## 
+#Function that calls aws api and returns comprehension on text
+  comprehend = boto3.client(service_name='comprehend', region_name='us-east-1')
+  toAWS.replace("\n", ' ')
+  print('Calling DetectEntities')
+  with open('awsResponse.json', 'w') as outfile:  
+    json.dump(comprehend.detect_entities(Text=toAWS, LanguageCode='en'), outfile, sort_keys=True, indent=4)
+  print('End of DetectEntities\n')
+
+  keywords = findKeywords()
+
+  response = MessageToJson(response)
+  response = json.loads(str(response))
+
+  #print(json.dumps(response, indent=4))
+
+  with open('gcpResponse.json', 'w') as outfile:
+    json.dump(response, outfile, indent=4)
+
+  with open('gcpResponse.json') as f:
+    gcpResponse = json.load(f)
+
+  censorList = []
+  keywords.append('Science')
+
+  for i in range(len(keywords)):
+    for values in gcpResponse['textAnnotations']:
+      #print(values['description'] + "VALUES " + keywords[i] + "KEYWORDS")
+      if values['description'].lower() == keywords[i].lower():
+        vertices = values['boundingPoly']['vertices']
+        first = vertices[0]
+        third = vertices[2]
+        wordDict = {"x1": first['x'], "y1": first['y'], 'x2': third['x'], 'y2': third['y']}
+        censorList.append(wordDict)
+  # for i in range(len(censorList)):
+  #   print(censorList[i])
+
+  classify(censorList, 'resumes/ChrisResume.png', "PLEASEWORK.png")
+
+#pull keywords from returned aws json, populate list
+def findKeywords():
+  with open('awsResponse.json') as f:
+    awsResponse = json.load(f)
+
+  valsToCensor = []
+
+  for value in awsResponse['Entities']:
+    if value['Type'] == "PERSON":
+      for val in value['Text'].split():
+        valsToCensor.append(val)
+
+  return valsToCensor
+
+def classify(censorList, filename, saveas):
+
+  im = Image.open(filename).convert('RGBA')
+
+  for i in range(len(censorList)):
+    draw = ImageDraw.Draw(im)
+    draw.rectangle(((censorList[i]['x1'], censorList[i]['y1']), 
+    (censorList[i]['x2'], censorList[i]['y2'])), fill='#000000')
+    del draw
+
+  im.save(saveas)
+
+if __name__ == "__main__":
+  gcp('resumes/ChrisResume.png')
+  
