@@ -4,6 +4,7 @@
 
 from PIL import Image, ImageDraw
 import sys
+import re
 import boto3
 import json
 import io
@@ -11,11 +12,21 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 from google.protobuf.json_format import MessageToJson
+
+#Global variables needed for call in main
 censorList = []
-#Process image with google ocr api and get list of all text and location
+fratList = []
+soroList = []
+
+#Strip newlines from gcp response
+def strip_newline(stringVal):
+  return ' '.join(re.findall("\w+", stringVal))
+
+#Process image with Google OCR API and get list of all text and locations of words.
 def gcp(imageName):    
-  # Instantiates a client
+  #Instantiates a client
   client = vision.ImageAnnotatorClient()
+
   #The name of the image file to annotate
   file_name = os.path.join(
       os.path.dirname(__file__),
@@ -30,6 +41,7 @@ def gcp(imageName):
   # Performs document text detection on the image file
   response = client.document_text_detection(image=image)
 
+  #Strip response for just the body of the resume
   toAWS = str(response)
   toAWS = toAWS.split("}")[-2].partition(': "')[2][:-2].strip()
 
@@ -42,12 +54,18 @@ def gcp(imageName):
     json.dump(comprehend.detect_entities(Text=toAWS, LanguageCode='en'), outfile, sort_keys=True, indent=4)
   print('End of DetectEntities\n')
 
-  keywords = findKeywords()
+  f = open('data/frats.txt')
+  frats = f.read()
 
+  frats.replace('', ' ')
+  for value in frats.split(','):
+    fratList.append(strip_newline(value.replace("'", "").strip().lower()))
+  f.close()
+  
   response = MessageToJson(response)
   response = json.loads(str(response))
 
-  #print(json.dumps(response, indent=4))
+  keywords = findKeywords()
 
   with open('gcpResponse.json', 'w') as outfile:
     json.dump(response, outfile, indent=4)
@@ -55,27 +73,26 @@ def gcp(imageName):
   with open('gcpResponse.json') as f:
     gcpResponse = json.load(f)
 
-  
-  keywords.append('Science')
-
+  for values in gcpResponse['textAnnotations']:
+    if strip_newline(values['description'].lower()) in fratList:
+      keywords.append(values['description'])
+      
   for i in range(len(keywords)):
     for values in gcpResponse['textAnnotations']:
-      #print(values['description'] + "VALUES " + keywords[i] + "KEYWORDS")
       if values['description'].lower() == keywords[i].lower():
         vertices = values['boundingPoly']['vertices']
         first = vertices[0]
         third = vertices[2]
         wordDict = {"x1": first['x'], "y1": first['y'], 'x2': third['x'], 'y2': third['y']}
         censorList.append(wordDict)
-  # for i in range(len(censorList)):
-  #   print(censorList[i])
 
 #pull keywords from returned aws json, populate list
 def findKeywords():
-  with open('awsResponse.json') as f:
-    awsResponse = json.load(f)
 
   valsToCensor = []
+
+  with open('awsResponse.json') as f:
+    awsResponse = json.load(f)
 
   for value in awsResponse['Entities']:
     if value['Type'] == "PERSON":
@@ -102,4 +119,4 @@ def do_all(fileName, saveAs):
 
 
 if __name__ == "__main__":
-  do_all('resumes/HaydenRieweResume.jpeg', "PLEASEWORK2.png")
+  do_all('fratTest.png', "PLEASEWORK.png")

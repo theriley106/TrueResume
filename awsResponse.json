@@ -2,162 +2,22 @@
     "Entities": [
         {
             "BeginOffset": 0,
-            "EndOffset": 15,
-            "Score": 0.9622647166252136,
-            "Text": "Hayden W. Riewe",
-            "Type": "PERSON"
-        },
-        {
-            "BeginOffset": 16,
-            "EndOffset": 35,
-            "Score": 0.9399450421333313,
-            "Text": "nHriewe12@gmail.com",
-            "Type": "OTHER"
-        },
-        {
-            "BeginOffset": 56,
-            "EndOffset": 100,
-            "Score": 0.9172309637069702,
-            "Text": "115 Harts Lane, Simpsonville, South Carolina",
-            "Type": "LOCATION"
-        },
-        {
-            "BeginOffset": 101,
-            "EndOffset": 106,
-            "Score": 0.5119540095329285,
-            "Text": "29681",
-            "Type": "OTHER"
-        },
-        {
-            "BeginOffset": 122,
-            "EndOffset": 136,
-            "Score": 0.9998722672462463,
-            "Text": "(864) 399-2571",
-            "Type": "OTHER"
-        },
-        {
-            "BeginOffset": 149,
-            "EndOffset": 174,
-            "Score": 0.772847056388855,
-            "Text": "https://github.com/hriewe",
-            "Type": "OTHER"
-        },
-        {
-            "BeginOffset": 185,
-            "EndOffset": 205,
-            "Score": 0.7929102182388306,
-            "Text": "https://hrcyber.tech",
-            "Type": "OTHER"
-        },
-        {
-            "BeginOffset": 419,
-            "EndOffset": 433,
-            "Score": 0.7473832368850708,
-            "Text": "South Carolina",
-            "Type": "LOCATION"
-        },
-        {
-            "BeginOffset": 554,
-            "EndOffset": 558,
-            "Score": 0.9447041153907776,
-            "Text": "2019",
-            "Type": "DATE"
-        },
-        {
-            "BeginOffset": 586,
-            "EndOffset": 604,
-            "Score": 0.8261119723320007,
-            "Text": "Clemson University",
-            "Type": "ORGANIZATION"
-        },
-        {
-            "BeginOffset": 850,
-            "EndOffset": 854,
-            "Score": 0.9599589705467224,
-            "Text": "2018",
-            "Type": "DATE"
-        },
-        {
-            "BeginOffset": 879,
-            "EndOffset": 897,
-            "Score": 0.7371817827224731,
-            "Text": "Clemson University",
-            "Type": "ORGANIZATION"
-        },
-        {
-            "BeginOffset": 957,
-            "EndOffset": 963,
-            "Score": 0.4300523102283478,
-            "Text": "Splunk",
-            "Type": "ORGANIZATION"
-        },
-        {
-            "BeginOffset": 1200,
-            "EndOffset": 1214,
-            "Score": 0.7941107153892517,
-            "Text": "South Carolina",
-            "Type": "LOCATION"
-        },
-        {
-            "BeginOffset": 1259,
-            "EndOffset": 1263,
-            "Score": 0.9625210762023926,
-            "Text": "2012",
-            "Type": "DATE"
-        },
-        {
-            "BeginOffset": 1269,
-            "EndOffset": 1273,
-            "Score": 0.9876263737678528,
-            "Text": "2018",
-            "Type": "DATE"
-        },
-        {
-            "BeginOffset": 1673,
-            "EndOffset": 1676,
-            "Score": 0.8970667719841003,
-            "Text": "AWS",
-            "Type": "ORGANIZATION"
-        },
-        {
-            "BeginOffset": 1718,
-            "EndOffset": 1723,
-            "Score": 0.6881272196769714,
-            "Text": "MacOS",
-            "Type": "TITLE"
-        },
-        {
-            "BeginOffset": 1725,
-            "EndOffset": 1732,
-            "Score": 0.9947027564048767,
-            "Text": "Windows",
-            "Type": "TITLE"
-        },
-        {
-            "BeginOffset": 1738,
-            "EndOffset": 1743,
-            "Score": 0.9744446277618408,
-            "Text": "Linux",
-            "Type": "TITLE"
-        },
-        {
-            "BeginOffset": 1859,
-            "EndOffset": 1866,
-            "Score": 0.33884197473526,
-            "Text": "HackGSU",
+            "EndOffset": 6,
+            "Score": 0.5058285593986511,
+            "Text": "Acacia",
             "Type": "ORGANIZATION"
         }
     ],
     "ResponseMetadata": {
         "HTTPHeaders": {
             "connection": "keep-alive",
-            "content-length": "2165",
+            "content-length": "111",
             "content-type": "application/x-amz-json-1.1",
-            "date": "Sun, 03 Feb 2019 07:20:47 GMT",
-            "x-amzn-requestid": "3a0f7b19-2784-11e9-b94f-f9d17432b622"
+            "date": "Sun, 03 Feb 2019 14:58:33 GMT",
+            "x-amzn-requestid": "2d592159-27c4-11e9-8c0a-33aa4859586d"
         },
         "HTTPStatusCode": 200,
-        "RequestId": "3a0f7b19-2784-11e9-b94f-f9d17432b622",
+        "RequestId": "2d592159-27c4-11e9-8c0a-33aa4859586d",
         "RetryAttempts": 0
     }
 }
