@@ -1,5 +1,5 @@
 # TrueResume
-Reducing Gender/Racial/Age discrimination in the hiring process
+Reducing subconscious gender/racial bias in the hiring process
 
 ## About The Project
 
